@@ -120,7 +120,7 @@ export default function () {
             <h1> J'ai pas de titre </h1>
             <Basket>
                 <h3> Mon panier : {cart.length} </h3>
-                <Link to={`/articles/1`}>  <p> Voir mon panier </p> </Link>
+                <Link to={`/articles/`}>  <p> Voir mon panier </p> </Link>
             </Basket>
 
         </Header>

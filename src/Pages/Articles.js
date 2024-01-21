@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import {useCart} from "../Providers/CartContext";
+import {Link } from "react-router-dom";
+import React from "react";
+import product from "./Product";
 
 const PageContainer = styled.div`
     display: flex;
@@ -9,25 +12,39 @@ const PageContainer = styled.div`
 `;
 
 const Header = styled.header`
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5B86AE;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+    a {
+        display: block;
+        color: #114675;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 `;
 
 const Footer = styled.footer`
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  margin-top: auto;
+    background-color: #5B86AE;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
 `;
 
 const CartContainer = styled.div`    
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Trois colonnes égales */
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -36,19 +53,22 @@ const CartContainer = styled.div`
 
 
 const ProductContainer = styled.div`
-    margin-top: 20px;
+    background-color: rgba(148, 169, 187, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const ProductItem = styled.div`
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-`;
 
 const DeleteButton = styled.button`
-    background-color: #ff5757;
-    width: 50vw;
+    background-color: #D24E35;
     color: #fff;
     padding: 10px;
     border: none;
@@ -62,19 +82,17 @@ export default function Cart() {
     return (
         <PageContainer>
             <Header>
-                <h1>Mon panier</h1>
+                <Link to={`/home/`}> <h4> Retour </h4>  </Link>
             </Header>
-                <h2> Liste des produits </h2>
+                <h2> Mon panier </h2>
                 <CartContainer>
                     {cart.map((product) => (
                         <ProductContainer key={product.id}>
-                            <div>
                                 <p>{product}</p>
-                            </div>
                         </ProductContainer>
                     ))}
                 </CartContainer>
-                <DeleteButton onClick={deleteCart}>Supprimer la liste</DeleteButton>
+                <DeleteButton onClick={deleteCart(product)}>Supprimer la liste</DeleteButton>
 
 
 

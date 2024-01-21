@@ -18,7 +18,7 @@ const Header = styled.header`
 
     a {
         display: block;
-        color: #CF9E76;
+        color: #114675;
         text-decoration: none;
         font-weight: bold;
         margin-top: 10px;
@@ -177,7 +177,7 @@ export default function () {
 
     return <PageContainer>
         <Header>
-            <Link to={`/products/${productId}/`}> <h2> Retour </h2>  </Link>
+            <Link to={`/products/${productId}/`}> <h4> Retour </h4>  </Link>
 
         </Header>
         {
