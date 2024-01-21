@@ -129,6 +129,13 @@ const CommentFormTextarea = styled.textarea`
     box-sizing: border-box;
 `;
 
+const Footer = styled.footer`
+    background-color: #5B86AE;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+`;
+
 const CommentFormButton = styled.button`
     padding: 10px 15px;
     background-color: #3498db;
@@ -217,7 +224,9 @@ export default function () {
 
 
         }
-
+        <Footer>
+            <p>© 2024 Mon Site Web. Tous droits réservés.</p>
+        </Footer>
     </PageContainer>
 }
 
