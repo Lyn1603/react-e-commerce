@@ -36,6 +36,21 @@ const Header = styled.header`
     }
 `;
 
+const Basket = styled.div`
+
+    background-color: rgba(148, 169, 187, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+`;
+
 const Main = styled.div`
     display: flex;
     flex-direction: column;
@@ -114,11 +129,17 @@ export default function () {
 
     let { productId } = useParams()
     let { data, isFetching } = useGetProductsQuery()
+    let { cart, addToCart } = useCart()
 
     return <PageContainer>
 
         <Header>
             <Link to={`/home/`}> <h4> Retour </h4>  </Link>
+
+            <Basket>
+                <h3> Mon panier : {cart.length} </h3>
+                <Link to={`/articles/`}>  <p> Voir mon panier </p> </Link>
+            </Basket>
         </Header>
         {
             isFetching ? <h1> Produit { productId } </h1> : <Main>

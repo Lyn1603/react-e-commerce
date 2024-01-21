@@ -8,6 +8,16 @@ export const productsAPI = createApi({
             query: () => 'products',
             providesTags: ['products'], // On set le tag pour les produits
         }),
+        addComment: builder.mutation({
+            query: (productId, username, comment) => ({
+                url: `/products/${productId}/comments`,
+                method: 'POST',
+                body: {
+                    username,
+                    comment
+                }
+            }),
+        }),
         fetchProducts: builder.query({
             query: (productId) => ({
                 url: `/products/${productId}/comments`,
@@ -18,4 +28,4 @@ export const productsAPI = createApi({
     }),
 });
 
-export const { useGetProductsQuery, useFetchProductsQuery } = productsAPI;
+export const { useGetProductsQuery, useFetchProductsQuery, useAddCommentMutation } = productsAPI;
