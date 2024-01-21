@@ -10,20 +10,49 @@ const Header = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #3498db;
+    align-items: center;
+    background-color: #5B86AE;
     color: #fff;
     padding: 10px;
     text-align: center;
+
+    a {
+        display: block;
+        color: #D24E35;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+
+const Basket = styled.div`
+
+    background-color: rgba(148, 169, 187, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 `;
 
 const Main = styled.main`
+    background-color: rgba(207, 158, 118, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
 `;
 
 const Footer = styled.footer`
-    background-color: #2ecc71;
+    background-color: #5B86AE;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -32,13 +61,15 @@ const Footer = styled.footer`
 
 const ListProducts = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Trois colonnes égales */
+    margin-left: 10%;
+    grid-template-columns: repeat(3, 0.5fr);  /* Trois colonnes égales */
     gap: 20px;
     margin-top: 20px;
     
 `;
 
 const ProductCard = styled.div`
+    background-color: rgba(148, 169, 187, 0.45);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +99,7 @@ const ProductCard = styled.div`
 
     a {
         display: block;
-        color: #3498db;
+        color: #CF9E76;
         text-decoration: none;
         font-weight: bold;
         margin-top: 10px;
@@ -86,11 +117,11 @@ export default function () {
 
     return <div>
         <Header>
-            <h1>Mon Site Web</h1>
-            <div>
-                <p> Mon panier : {cart.length} </p>
-                <Link to={`/articles/1`}> Voir mon panier </Link>
-            </div>
+            <h1> J'ai pas de titre </h1>
+            <Basket>
+                <h3> Mon panier : {cart.length} </h3>
+                <Link to={`/articles/1`}>  <p> Voir mon panier </p> </Link>
+            </Basket>
 
         </Header>
         {

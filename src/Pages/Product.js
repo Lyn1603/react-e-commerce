@@ -6,6 +6,7 @@ import React from "react";
 
 
 const PageContainer = styled.div`
+    background-color: rgba(207, 158, 118, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,10 +17,23 @@ const Header = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #3498db;
+    background-color: #5B86AE;
     color: #fff;
     padding: 10px;
     text-align: center;
+
+    a {
+        display: block;
+        color: #CF9E76;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
 `;
 
 const Main = styled.div`
@@ -33,7 +47,7 @@ const Main = styled.div`
 
     a {
         display: block;
-        color: #3498db;
+        color: #CF9E76;
         text-decoration: none;
         font-weight: bold;
         margin-top: 10px;
@@ -47,6 +61,7 @@ const Main = styled.div`
 
 
 const ProductCard = styled.div`
+    background-color: rgba(148, 169, 187, 0.45);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,7 +92,7 @@ const ProductCard = styled.div`
 `;
 
 const AddButton = styled.button`
-    background-color: #51a301;
+    background-color: #CF9E76;
     width: 10vw;
     color: #fff;
     padding: 10px;
@@ -87,7 +102,7 @@ const AddButton = styled.button`
 `;
 
 const Footer = styled.footer`
-  background-color: #333;
+  background-color: #5B86AE;
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -103,7 +118,7 @@ export default function () {
     return <PageContainer>
 
         <Header>
-            <h2> Description </h2>
+            <Link to={`/home/`}> <h2> Retour </h2>  </Link>
         </Header>
         {
             isFetching ? <h1> Produit { productId } </h1> : <Main>
@@ -147,7 +162,7 @@ function ProductList() {
                     }}> Ajouter au panier
                     </AddButton>
 
-                </ProductCard> : <p></p>
+                </ProductCard> : <div>  </div>
             }
 
         </div>

@@ -1,14 +1,43 @@
 import {useGetProductsQuery, useFetchProductsQuery} from "../Services/API"
 import styled from "styled-components";
 import { useCart } from "../Providers/CartContext"
-import {useParams} from "react-router-dom";
-import {useState} from "react";
+import {Link, useParams} from "react-router-dom";
+import React, {useState} from "react";
+import Product from "./Product";
 
 
+
+const Header = styled.header`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #5B86AE;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+    a {
+        display: block;
+        color: #CF9E76;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+
+const PageContainer = styled.div`
+
+    background-color: rgba(207, 158, 118, 0.2);
+    
+`
 
 const ListComments = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Trois colonnes égales */
+    grid-template-columns: repeat(3, 1fr);  /* Trois colonnes égales */
     gap: 20px;
     margin-top: 20px;
 
@@ -65,7 +94,17 @@ const CommentsCard = styled.div`
 
 
 const CommentFormContainer = styled.div`
-  margin-top: 20px;
+    background-color: rgba(148, 169, 187, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    margin-left: 38%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const CommentFormLabel = styled.label`
@@ -136,7 +175,11 @@ export default function () {
 
 
 
-    return <div>
+    return <PageContainer>
+        <Header>
+            <Link to={`/products/${productId}/`}> <h2> Retour </h2>  </Link>
+
+        </Header>
         {
             isFetching ? <h1> Produit { productId } </h1> : <div>
 
@@ -144,39 +187,39 @@ export default function () {
                     <CommentList/>
                 </ListComments>
 
-                <h2> Ajouter un commentaire </h2>
 
-            <CommentFormContainer>
+                <CommentFormContainer>
+                    <h2> Ajouter un commentaire </h2>
 
-                <form onSubmit={handleSubmit}>
-                    <CommentFormLabel>
-                        Nom d'utilisateur:
-                        <CommentFormInput
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </CommentFormLabel>
-                    <CommentFormLabel>
-                        Commentaire:
-                        <CommentFormTextarea
-                            value={commentText}
-                            onChange={(e) => setComment(e.target.value)}
-                        ></CommentFormTextarea>
-                    </CommentFormLabel>
-                    <CommentFormButton type="submit">
-                        Ajouter un commentaire
-                    </CommentFormButton>
+                    <form onSubmit={handleSubmit}>
+                        <CommentFormLabel>
+                            Nom d'utilisateur:
+                            <CommentFormInput
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </CommentFormLabel>
+                        <CommentFormLabel>
+                            Commentaire:
+                            <CommentFormTextarea
+                                value={commentText}
+                                onChange={(e) => setComment(e.target.value)}
+                            ></CommentFormTextarea>
+                        </CommentFormLabel>
+                        <CommentFormButton type="submit">
+                            Ajouter un commentaire
+                        </CommentFormButton>
 
-                </form>
-            </CommentFormContainer>
+                    </form>
+                </CommentFormContainer>
 
             </div>
 
 
         }
 
-    </div>
+    </PageContainer>
 }
 
 function CommentList() {
