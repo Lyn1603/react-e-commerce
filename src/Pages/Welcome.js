@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
+
 const ShopPresentationContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -37,7 +38,7 @@ const WelcomePage = () => {
     return (
         <ShopPresentationContainer>
 
-                <h1 style={{ fontSize: '32px', marginBottom: '15px' }}>Bienvenue dans Notre Boutique en Ligne</h1>
+                <h1 style={{ fontSize: '78px', marginBottom: '15px' }}>DelicateFlavors</h1>
 
                 <Button to="/home">Voir la liste des produits</Button>
 
