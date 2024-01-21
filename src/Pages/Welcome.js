@@ -38,7 +38,7 @@ const WelcomePage = () => {
     return (
         <ShopPresentationContainer>
 
-                <h1 style={{ fontSize: '78px', marginBottom: '15px' }}>DelicateFlavors</h1>
+                <h1 style={{ fontSize: '78px', marginBottom: '15px' }}>DelicateStore</h1>
 
                 <Button to="/home">Voir la liste des produits</Button>
 

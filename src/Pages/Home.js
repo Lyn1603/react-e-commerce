@@ -117,7 +117,7 @@ export default function () {
 
     return <div>
         <Header>
-            <h1> DelicateFlavor </h1>
+            <h1> DelicateStore </h1>
             <Basket>
                 <h3> Mon panier : {cart.length} </h3>
                 <Link to={`/articles/`}>  <p> Voir mon panier </p> </Link>
