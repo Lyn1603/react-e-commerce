@@ -42,7 +42,7 @@ const Footer = styled.footer`
     margin-top: auto;
 `;
 
-const CartContainer = styled.div`    
+const CartContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* Trois colonnes égales */
     border: 1px solid #ddd;
@@ -84,15 +84,15 @@ export default function Cart() {
             <Header>
                 <Link to={`/home/`}> <h4> Retour </h4>  </Link>
             </Header>
-                <h2> Mon panier </h2>
-                <CartContainer>
-                    {cart.map((product) => (
-                        <ProductContainer key={product.id}>
-                                <p>{product}</p>
-                        </ProductContainer>
-                    ))}
-                </CartContainer>
-                <DeleteButton onClick={deleteCart(product)}>Supprimer la liste</DeleteButton>
+            <h2> Mon panier </h2>
+            <CartContainer>
+                {cart.map((product) => (
+                    <ProductContainer key={product.id}>
+                        <p>{product}</p>
+                    </ProductContainer>
+                ))}
+            </CartContainer>
+            <DeleteButton onClick={deleteCart}>Supprimer la liste</DeleteButton>
 
 
 

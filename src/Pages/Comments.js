@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useCart } from "../Providers/CartContext"
 import {Link, useParams} from "react-router-dom";
 import React, {useState} from "react";
-import Product from "./Product";
 
 
 
@@ -32,7 +31,7 @@ const Header = styled.header`
 const PageContainer = styled.div`
 
     background-color: rgba(207, 158, 118, 0.2);
-    
+
 `
 
 const ListComments = styled.div`
@@ -41,7 +40,7 @@ const ListComments = styled.div`
     gap: 20px;
     margin-top: 20px;
 
-    `;
+`;
 
 const Comments = styled.div`
     display: flex;
@@ -49,7 +48,7 @@ const Comments = styled.div`
     justify-content: center;
     align-items: center;
 
-    `;
+`;
 
 const CommentsCard = styled.div`
     display: flex;
@@ -108,47 +107,47 @@ const CommentFormContainer = styled.div`
 `;
 
 const CommentFormLabel = styled.label`
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 `;
 
 const CommentFormInput = styled.input`
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 `;
 
 const CommentFormTextarea = styled.textarea`
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 `;
 
 const CommentFormButton = styled.button`
-  padding: 10px 15px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
-  &:hover {
-    background-color: #2779bd;
-  }
+    &:hover {
+        background-color: #2779bd;
+    }
 `;
 export default function () {
 
     let { productId } = useParams()
-    let { data, isFetching } = useGetProductsQuery(productId)
+    let { isFetching } = useGetProductsQuery(productId)
     const [username, setUsername] = useState("");
     const [commentText, setComment] = useState("");
-    let {comments, addComment} = useCart()
+    let { addComment} = useCart()
 
 
     const handleSubmit = async (e) => {
@@ -254,7 +253,6 @@ function CommentList() {
 
 
 }
-
 
 
 
