@@ -18,7 +18,7 @@ const Header = styled.header`
 
     a {
         display: block;
-        color: #D24E35;
+        color:#114675;
         text-decoration: none;
         font-weight: bold;
         margin-top: 10px;
