@@ -97,7 +97,7 @@ export default function Cart() {
 
 
             <Footer>
-                <p>&copy; 2024 Mon Super Site. Tous droits réservés.</p>
+                <p>&copy; 2024 Benabdessadok Lynda. Tous droits réservés.</p>
             </Footer>
         </PageContainer>
     );

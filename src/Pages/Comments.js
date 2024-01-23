@@ -225,7 +225,7 @@ export default function () {
 
         }
         <Footer>
-            <p>© 2024 Mon Site Web. Tous droits réservés.</p>
+            <p>© 2024 Benabdessadok Lynda. Tous droits réservés.</p>
         </Footer>
     </PageContainer>
 }
